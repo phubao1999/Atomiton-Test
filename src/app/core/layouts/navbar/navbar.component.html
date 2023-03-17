@@ -1,0 +1,16 @@
+<div class="navbar-position position-fixed bg-light fs-6">
+  <ul class="list-group">
+    <ng-container *ngFor="let item of navbarItems">
+      <li
+        [ngClass]="{
+          disabled: !item.url,
+          active: item.url && item.url == href
+        }"
+        class="list-group-item to-center p-3"
+        (click)="navigate(item.url)"
+      >
+        <i [class]="item.icon"></i>
+      </li>
+    </ng-container>
+  </ul>
+</div>

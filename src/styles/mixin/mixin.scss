@@ -1,0 +1,17 @@
+@import "/src/styles/variables/index.scss";
+
+@mixin transition() {
+  transition: all ease 0.3s;
+}
+
+@mixin mobile {
+  @media only screen and (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (max-width: $lg) {
+    @content;
+  }
+}

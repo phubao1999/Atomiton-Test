@@ -1,0 +1,15 @@
+@import "/src/styles/variables/index.scss";
+@import "/src/styles/mixin/index.scss";
+
+.base-topbar {
+  @include transition;
+  background-color: $base-topbar-bg;
+  height: $topbar-height;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+
+  &.navbar-open {
+    padding-left: calc($navbar-width + 2rem);
+  }
+}

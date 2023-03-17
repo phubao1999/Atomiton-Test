@@ -1,0 +1,16 @@
+<div class="base-topbar bg-light second-bar mb-3">
+  <div class="label fw-semibold">Pending Recommendation</div>
+  <div>
+    <ng-container *ngFor="let item of buttonActions">
+      <div
+        [ngClass]="{
+          active: item.id === currentParams
+        }"
+        class="button"
+        (click)="navigateRecommend(item.id)"
+      >
+        <i [class]="item.icon"></i> <span>{{ item.name }}</span>
+      </div>
+    </ng-container>
+  </div>
+</div>

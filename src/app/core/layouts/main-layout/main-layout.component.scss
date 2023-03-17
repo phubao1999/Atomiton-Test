@@ -1,0 +1,37 @@
+@import "/src/styles/variables/index.scss";
+@import "/src/styles/mixin/index.scss";
+
+.navbar-position {
+  left: 0;
+  top: 0;
+  width: $navbar-width;
+  height: 100vh;
+  @include transition;
+  z-index: 99;
+  &.hide-navbar {
+    transform: translateX(calc(0rem - $navbar-width + 1rem));
+  }
+}
+
+.content {
+  @include transition;
+  padding-left: calc($navbar-width);
+  &.hide-navbar {
+    padding-left: 1rem;
+  }
+}
+
+.button-action {
+  top: 2rem;
+  left: calc($navbar-width - 1rem);
+  z-index: 99;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  @include transition;
+  border: 1px solid;
+
+  &.rotate {
+    transform: rotate(180deg);
+    left: 0rem;
+  }
+}

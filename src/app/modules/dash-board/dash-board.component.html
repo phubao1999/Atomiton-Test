@@ -1,0 +1,90 @@
+<app-dashboard-header></app-dashboard-header>
+<div class="bg-light p-3 m-3 dashboard">
+  <div>
+    <div class="d-flex justify-content-between">
+      <div class="d-flex">
+        <div *ngFor="let item of viewModes">
+          <div
+            [ngClass]="{
+              active: item.mode == currentMode
+            }"
+            class="icon to-center"
+            (click)="updateModeView(item.mode)"
+          >
+            <i [class]="item.icon"></i>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="currentMode == DashboardViewMode.Grid">
+        <button type="button" class="btn btn-success">Accept All</button>
+        <button type="button" class="btn btn-outline-success">
+          Reject All
+        </button>
+      </div>
+    </div>
+    <ng-container *ngIf="currentMode"> </ng-container>
+    <div *ngIf="currentMode == DashboardViewMode.Grid" class="view mt-3">
+      <div class="p-3 bg-primary text-light border-radius-top-x">
+        Pending Recommendation
+      </div>
+      <div class="bg-top-bar px-3 border-x-bottom">
+        <div class="row">
+          <div class="col-sm py-3 border-right hide-mobile">
+            <span class="fw-semibold text-success">Increase</span>
+            CTP flow to agglomeration
+            <div class="pt-2">
+              Current Value: <span class="text-primary">160</span> m3/h to
+              <span class="text-primary">240</span> m3/h
+            </div>
+          </div>
+          <div class="col-sm py-3 border-right hide-mobile">
+            <span class="fw-semibold text-fail">Decrease</span>
+            Green Liquor
+            <div class="pt-2">
+              Current Value: <span class="text-primary">160</span> m3/h to
+              <span class="text-primary">240</span> m3/h
+            </div>
+          </div>
+          <div class="col-sm py-3">
+            <span class="fw-semibold text-success">Increase</span>
+            Fine Stream Density
+            <div class="pt-2">
+              Current Value: <span class="text-primary">1.61</span> m3/h to
+              <span class="text-primary">1.92</span> m3/h
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="px-3 border-x-bottom">
+        <div class="row">
+          <div class="col-sm p-3">
+            <p>Impact on SST</p>
+            <p class="text-primary fw-semibold fs-4">1.20 g/g</p>
+          </div>
+          <div class="col-sm p-3">
+            <p>Impact on SST</p>
+            <p class="text-primary fw-semibold fs-4">3.2.0</p>
+          </div>
+          <div class="col-sm p-3">
+            <p>Impact on AGL Solid Concentration</p>
+            <p class="text-primary fw-semibold fs-4">1.80 g/L</p>
+          </div>
+          <div class="col-sm p-3">
+            <p>Time for Prediction</p>
+            <p class="text-primary fw-semibold fs-4">12 hours</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-3 border-x-bottom border-radius-bottom-x">
+        <div class="total">
+          <button type="button" class="btn btn-success mx-2">
+            <i class="fas fa-check"></i>
+          </button>
+          <button type="button" class="btn btn-outline-danger">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

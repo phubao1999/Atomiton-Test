@@ -1,0 +1,53 @@
+@import "/src/styles/variables/index.scss";
+@import "/src/styles/mixin/index.scss";
+
+.base-topbar {
+  @include transition;
+  background-color: $base-topbar-bg;
+  padding: 1rem 2rem;
+
+  &.second-bar {
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    @include mobile {
+      flex-direction: column;
+    }
+    .label {
+      @include mobile {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .button {
+    @include transition;
+    border: 1px solid $base-button-color;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    color: $base-button-color;
+    margin-left: 0.5rem;
+    @include mobile {
+      font-size: 12px;
+    }
+    @include tablet {
+      padding: 0.5rem;
+      margin: 5px;
+    }
+
+    &.active {
+      background-color: $base-button-color;
+      color: white;
+    }
+
+    &:hover {
+      background-color: $base-button-color;
+      color: white;
+    }
+    span {
+      margin-left: 0.5rem;
+    }
+  }
+}

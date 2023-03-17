@@ -1,0 +1,27 @@
+<div
+  class="navbar-position position-fixed bg-light"
+  [ngClass]="{
+    'hide-navbar': !navBarState
+  }"
+>
+  <app-navbar></app-navbar>
+</div>
+<button
+  type="button"
+  class="button-action btn btn-light position-fixed text-primary"
+  [ngClass]="{
+    rotate: !navBarState
+  }"
+  (click)="collapseNavbar()"
+>
+  <i class="fas fa-chevron-left"></i>
+</button>
+<app-topbar [navBarState]="navBarState"></app-topbar>
+<div
+  class="content"
+  [ngClass]="{
+    'hide-navbar': !navBarState
+  }"
+>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,16 @@
+@import "./styles/variables/index";
+@import "./styles/mixin/index.scss";
+
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: $main-bg !important;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.to-center {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}

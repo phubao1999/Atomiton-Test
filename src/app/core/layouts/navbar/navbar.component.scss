@@ -1,0 +1,15 @@
+@import "/src/styles/variables/index.scss";
+@import "/src/styles/mixin/index.scss";
+
+.navbar-position {
+  .list-group {
+    width: $navbar-width;
+    li {
+      @include transition;
+      transition: all ease 0.2s;
+      &:hover {
+        background-color: $navbar-hover;
+      }
+    }
+  }
+}

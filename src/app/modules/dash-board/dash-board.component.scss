@@ -1,0 +1,64 @@
+@import "/src/styles/variables/index.scss";
+@import "/src/styles/mixin/index.scss";
+
+.dashboard {
+  border-radius: 5px;
+  .icon {
+    margin-right: 1rem;
+    @include mobile {
+      margin-right: 0;
+    }
+    cursor: pointer;
+    &.active {
+      i {
+        background-color: $base-topbar-bg;
+        color: $base-button-color;
+      }
+    }
+    i {
+      padding: 0.5rem;
+    }
+  }
+
+  button.btn {
+    font-size: 14px !important;
+    &:nth-child(1) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .view {
+    .border-radius-top-x {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    .border-radius-bottom-x {
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .border-x-bottom {
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+      border-bottom: 1px solid $border-color;
+    }
+    .border-right {
+      border-right: 1px solid $border-color;
+      &.hide-mobile {
+        border-right: none;
+      }
+    }
+    .bg-top-bar {
+      background-color: $base-topbar-bg;
+      .text-success {
+        color: $success;
+      }
+      .text-fail {
+        color: $fail;
+      }
+    }
+    .total {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

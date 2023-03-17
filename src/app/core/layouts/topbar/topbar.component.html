@@ -1,0 +1,9 @@
+<div
+  *ngIf="breadCrumbData$ | async as breadCrumbData"
+  class="base-topbar"
+  [ngClass]="{
+    'navbar-open': navBarState
+  }"
+>
+  {{ breadCrumbData.breadcrumb }}
+</div>
